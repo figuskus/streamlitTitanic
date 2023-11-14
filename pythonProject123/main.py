@@ -2,10 +2,17 @@ import pickle
 from datetime import datetime
 import streamlit as st
 import numpy as np
+import path
 
 starttime = datetime.now()
-filename = "model.h5"
-model = pickle.load(open(filename,"rb"))
+dir = path.Path(__file__).abspath()
+# sys.append.path(dir.parent.parent)
+
+# load model
+pathToModel = "./model.h5"
+
+with open(pathToModel, 'rb') as file:
+    model = pickle.load(file)
 
 sex_d = {0: "Kobieta", 1: "Meżczyzna"}
 pclass_d = {0: "Pierwsza", 1: "Druga", 2: "Trzecia"}
