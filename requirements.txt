@@ -1,0 +1,6 @@
+pandas
+toml
+scikit-learn==1.2.2
+streamlit
+numpy
+path
